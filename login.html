@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link href="./output.css" rel="stylesheet" />
+</head>
+<body class="font-sans bg-gray-300 min-h-screen flex flex-col">
+   <!-- TOP NAVIGATION -->
+  <nav class="hidden md:flex h-6.5 bg-blue-800 items-center justify-center pl-[40%]">
+    <div class="space-x-5 text-xs text-white">
+      <a href="#">DIU NEWS</a>
+      <a href="#">FORUM</a>
+      <a href="student_info.html">STUDENTS</a>
+      <a href="parent.html">PARENTS</a>
+      <a href="teacher_info.html">TEACHERS</a>
+      <a href="#">ALUMNI</a>
+      <div class="relative inline-block">
+        <button id="routineDropdownBtn" class="focus:outline-none">CLASS ROUTINE</button>
+        <div id="routineDropdown" class="absolute left-0 mt-2 w-40 bg-white rounded shadow-lg z-50 hidden">
+          <a href="routine.html" class="block px-4 py-2 text-blue-800 hover:bg-blue-100">Student</a>
+          <a href="xxx.html" class="block px-4 py-2 text-blue-800 hover:bg-blue-100">Administrator</a>
+        </div>
+      </div>
+      <a href="#">HELP DESK</a>
+      <a href="#">SITEMAP</a>
+    </div>
+  </nav>
+
+  <!-- SECOND NAVIGATION -->
+  <section>
+    <div class="h-18 w-full bg-white flex justify-evenly items-center">
+      <!-- Mobile Menu Icon -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="h-7 w-8 font-bold flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <div>
+        <a href="index.html">
+          <img class="w-46 h-12 object-contain" src="./pic/Screenshot 2025-07-20 163353.png" alt="Logo" />
+        </a>
+      </div>
+
+      <!-- Navigation Selects -->
+      <div class="hidden md:flex text-base text-black border-none pr-7 space-x-2">
+        <select onchange="location.href=this.value">
+          <option selected disabled>Admissions</option>
+          <option value="admissions/apply.html">Apply Now</option>
+          <option value="admissions/requirements.html">Requirements</option>
+        </select>
+
+        <select onchange="location.href=this.value">
+          <option selected disabled>Academics</option>
+          <option value="academics/programs.html">Programs</option>
+          <option value="academics/calendar.html">Academic Calendar</option>
+        </select>
+
+        <select onchange="location.href=this.value">
+          <option selected disabled>Campus</option>
+          <option value="campus/map.html">Campus Map</option>
+          <option value="campus/facilities.html">Facilities</option>
+        </select>
+
+        <select onchange="location.href=this.value">
+          <option selected disabled>Research</option>
+          <option value="research/centers.html">Research Centers</option>
+          <option value="research/publications.html">Publications</option>
+        </select>
+
+        <select onchange="location.href=this.value">
+          <option selected disabled>International</option>
+          <option value="international/students.html">International Students</option>
+          <option value="international/partnerships.html">Partnerships</option>
+        </select>
+
+        <select onchange="location.href=this.value">
+          <option selected disabled>About</option>
+          <option value="about/overview.html">Overview</option>
+          <option value="about/contact.html">Contact Us</option>
+        </select>
+      </div>
+
+      <!-- Search Icon -->
+      <div>
+        <a href="#">
+          <svg class="w-6 h-10 hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Apply Button -->
+      <div
+        class="w-33 h-10 bg-blue-800 flex justify-center items-center text-white rounded-xl hover:bg-transparent ring-2 hover:border-yellow-500 hover:text-yellow-500 duration-600">
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col bg-blue-400 rounded-b-lg py-2 px-2 text-white absolute w-full z-50">
+      <a href="#" class="block py-2 px-2">DIU NEWS</a>
+      <a href="#" class="block py-2 px-2">FORUM</a>
+      <a href="student_info.html" class="block py-2 px-2">STUDENTS</a>
+      <a href="parent.html" class="block py-2 px-2">PARENTS</a>
+      <a href="teacher_info.html" class="block py-2 px-2">TEACHERS</a>
+      <a href="#" class="block py-2 px-2">ALUMNI</a>
+      <button id="mobileRoutineBtn" class="block py-2 px-2 w-full text-left">CLASS ROUTINE</button>
+      <div id="mobileRoutineModal" class="fixed inset-0 bg-transparent bg-opacity-40 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-64">
+          <h2 class="text-lg font-bold mb-4 text-blue-700">Select Routine Type</h2>
+          <a href="routine.html" class="block px-4 py-2 mb-2 bg-blue-800 text-white rounded hover:bg-blue-900 text-center">Student</a>
+          <a href="xxx.html" class="block px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-900 text-center">Administrator</a>
+          <button id="closeMobileRoutine" class="mt-4 px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 w-full">Cancel</button>
+        </div>
+      </div>
+      <a href="#" class="block py-2 px-2">HELP DESK</a>
+      <a href="#" class="block py-2 px-2">SITEMAP</a>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Admissions</option>
+          <option value="admissions/apply.html">Apply Now</option>
+          <option value="admissions/requirements.html">Requirements</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Academics</option>
+          <option value="academics/programs.html">Programs</option>
+          <option value="academics/calendar.html">Academic Calendar</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Campus</option>
+          <option value="campus/map.html">Campus Map</option>
+          <option value="campus/facilities.html">Facilities</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Research</option>
+          <option value="research/centers.html">Research Centers</option>
+          <option value="research/publications.html">Publications</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>International</option>
+          <option value="international/students.html">International Students</option>
+          <option value="international/partnerships.html">Partnerships</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>About</option>
+          <option value="about/overview.html">Overview</option>
+          <option value="about/contact.html">Contact Us</option>
+        </select>
+      </div>
+      <a href="#" class="block py-2 px-2">
+        <svg class="w-6 h-6 hover:text-yellow-600 inline" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </a>
+      <div
+        class="w-full h-10 bg-blue-800 flex justify-center items-center text-white rounded-xl hover:bg-transparent ring-2 hover:border-yellow-500 hover:text-yellow-500 duration-600 mt-2">
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="flex flex-1 items-center justify-center">
+    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg mt-8">
+      <h2 class="text-3xl font-bold text-center text-gray-800">Login Your Account</h2>
+      <form>
+        <div class="mb-4">
+          <label for="email" class="block mb-1 text-gray-600">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block mb-1 text-gray-600">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+        <div class="flex items-center justify-between mb-4">
+          <label class="flex items-center text-sm">
+            <input type="checkbox" class="mr-2 rounded" /> Remember me
+          </label>
+          <a href="recovery.html" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+        </div>
+        <button
+          type="submit"
+          class="w-full block text-center py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
+        >Login</button>
+      </form>
+      <p class="text-sm text-center text-gray-600">
+        Don't have an account?
+        <a href="/registration.html" class="text-blue-600 hover:underline">Sign up</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').onclick = function () {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    };
+    // Desktop CLASS ROUTINE dropdown
+    var routineDropdownBtn = document.getElementById('routineDropdownBtn');
+    var routineDropdown = document.getElementById('routineDropdown');
+    if (routineDropdownBtn && routineDropdown) {
+      routineDropdownBtn.onclick = function (e) {
+        e.stopPropagation();
+        routineDropdown.classList.toggle('hidden');
+      };
+      document.addEventListener('click', function (e) {
+        if (!routineDropdown.contains(e.target) && e.target !== routineDropdownBtn) {
+          routineDropdown.classList.add('hidden');
+        }
+      });
+    }
+    // Mobile CLASS ROUTINE modal
+    var mobileRoutineBtn = document.getElementById('mobileRoutineBtn');
+    var mobileRoutineModal = document.getElementById('mobileRoutineModal');
+    var closeMobileRoutine = document.getElementById('closeMobileRoutine');
+    if (mobileRoutineBtn && mobileRoutineModal && closeMobileRoutine) {
+      mobileRoutineBtn.onclick = function () {
+        mobileRoutineModal.classList.remove('hidden');
+      };
+      closeMobileRoutine.onclick = function () {
+        mobileRoutineModal.classList.add('hidden');
+      };
+      // Close modal when clicking outside
+      mobileRoutineModal.onclick = function (e) {
+        if (e.target === mobileRoutineModal) {
+          mobileRoutineModal.classList.add('hidden');
+        }
+      };
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

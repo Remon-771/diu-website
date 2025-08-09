@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Update Slot</title>
+  <link href="./output.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-4 text-center">Update Slot Information</h2>
+    <form id="updateForm">
+      <div class="mb-4">
+        <label class="block mb-1 font-medium">Room</label>
+        <input type="text" id="room" name="room" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1 font-medium">Subject</label>
+        <input type="text" id="subject" name="subject" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1 font-medium">Teacher</label>
+        <input type="text" id="teacher" name="teacher" class="w-full border border-gray-300 rounded px-3 py-2" required />
+      </div>
+      <div class="flex justify-between">
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
+        <button type="button" id="deleteBtn" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>
+      </div>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

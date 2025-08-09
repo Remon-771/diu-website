@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./output.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-r bg-gray-300 min-h-screen">
+
+   <!-- TOP NAVIGATION -->
+  <nav class="hidden md:flex h-6.5 bg-blue-800 items-center justify-center pl-[40%]">
+    <div class="space-x-5 text-xs text-white">
+      <a href="#">DIU NEWS</a>
+      <a href="#">FORUM</a>
+      <a href="student_info.html">STUDENTS</a>
+      <a href="parent.html">PARENTS</a>
+      <a href="teacher_info.html">TEACHERS</a>
+      <a href="#">ALUMNI</a>
+      <div class="relative inline-block">
+        <button id="routineDropdownBtn" class="focus:outline-none">CLASS ROUTINE</button>
+        <div id="routineDropdown" class="absolute left-0 mt-2 w-40 bg-white rounded shadow-lg z-50 hidden">
+          <a href="routine.html" class="block px-4 py-2 text-blue-800 hover:bg-blue-100">Student</a>
+          <a href="xxx.html" class="block px-4 py-2 text-blue-800 hover:bg-blue-100">Administrator</a>
+        </div>
+      </div>
+      <a href="#">HELP DESK</a>
+      <a href="#">SITEMAP</a>
+    </div>
+  </nav>
+
+   <!-- SECOND NAVIGATION -->
+  <section>
+    <div class="h-18 w-full bg-white flex justify-evenly items-center">
+      <!-- Mobile Menu Icon -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="h-7 w-8 font-bold flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <div>
+        <a href="index.html">
+          <img class="w-46 h-12 object-contain" src="./pic/Screenshot 2025-07-20 163353.png" alt="Logo" />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Selects -->
+      <div class="hidden md:flex text-base text-black border-none pr-7 space-x-2 justify-center">
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>Admissions</option>
+          <option value="admissions/apply.html">Apply Now</option>
+          <option value="admissions/requirements.html">Requirements</option>
+        </select>
+
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>Academics</option>
+          <option value="academics/programs.html">Programs</option>
+          <option value="academics/calendar.html">Academic Calendar</option>
+        </select>
+
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>Campus</option>
+          <option value="campus/map.html">Campus Map</option>
+          <option value="campus/facilities.html">Facilities</option>
+        </select>
+
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>Research</option>
+          <option value="research/centers.html">Research Centers</option>
+          <option value="research/publications.html">Publications</option>
+        </select>
+
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>International</option>
+          <option value="international/students.html">International Students</option>
+          <option value="international/partnerships.html">Partnerships</option>
+        </select>
+
+        <select onchange="location.href=this.value" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: none; padding-right: 0.5rem;">
+          <option selected disabled>About</option>
+          <option value="about/overview.html">Overview</option>
+          <option value="about/contact.html">Contact Us</option>
+        </select>
+      </div>
+
+      <!-- Search + Login -->
+      <div class="flex items-center space-x-6">
+        <div>
+          <a href="#">
+            <svg class="w-6 h-10 hover:text-yellow-600" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </a>
+        </div>
+        <div
+          class="w-33 h-10 bg-blue-800 flex justify-center items-center text-white rounded-xl hover:bg-transparent ring-2 hover:border-yellow-500 hover:text-yellow-500 duration-600">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col bg-blue-900 rounded-b-lg py-2 px-2 text-white absolute w-full z-50">
+      <a href="#" class="block py-2 px-2">DIU NEWS</a>
+      <a href="#" class="block py-2 px-2">FORUM</a>
+      <a href="student_info.html" class="block py-2 px-2">STUDENTS</a>
+      <a href="parent.html" class="block py-2 px-2">PARENTS</a>
+      <a href="teacher_info.html" class="block py-2 px-2">TEACHERS</a>
+      <a href="#" class="block py-2 px-2">ALUMNI</a>
+      <button id="mobileRoutineBtn" class="block py-2 px-2 w-full text-left">CLASS ROUTINE</button>
+      <div id="mobileRoutineModal" class="fixed inset-0 bg-transparent bg-opacity-40 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-64">
+          <h2 class="text-lg font-bold mb-4 text-blue-700">Select Routine Type</h2>
+          <a href="routine.html" class="block px-4 py-2 mb-2 bg-blue-800 text-white rounded hover:bg-blue-900 text-center">Student</a>
+          <a href="xxx.html" class="block px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-900 text-center">Administrator</a>
+          <button id="closeMobileRoutine" class="mt-4 px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 w-full">Cancel</button>
+        </div>
+      </div>
+      <a href="#" class="block py-2 px-2">HELP DESK</a>
+      <a href="#" class="block py-2 px-2">SITEMAP</a>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Admissions</option>
+          <option value="admissions/apply.html">Apply Now</option>
+          <option value="admissions/requirements.html">Requirements</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Academics</option>
+          <option value="academics/programs.html">Programs</option>
+          <option value="academics/calendar.html">Academic Calendar</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Campus</option>
+          <option value="campus/map.html">Campus Map</option>
+          <option value="campus/facilities.html">Facilities</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>Research</option>
+          <option value="research/centers.html">Research Centers</option>
+          <option value="research/publications.html">Publications</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>International</option>
+          <option value="international/students.html">International Students</option>
+          <option value="international/partnerships.html">Partnerships</option>
+        </select>
+      </div>
+      <div class="py-2">
+        <select class="w-full text-black" onchange="location.href=this.value">
+          <option disabled selected>About</option>
+          <option value="about/overview.html">Overview</option>
+          <option value="about/contact.html">Contact Us</option>
+        </select>
+      </div>
+      <a href="#" class="block py-2 px-2">
+        <svg class="w-6 h-6 hover:text-yellow-600 inline" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </a>
+      <div
+        class="w-full h-10 bg-blue-800 flex justify-center items-center text-white rounded-xl hover:bg-transparent ring-2 hover:border-yellow-500 hover:text-yellow-500 duration-600 mt-2">
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="flex items-center justify-center min-h-[70vh] pt-7">
+    <div class="bg-white p-6 rounded-2xl shadow-md w-[90%] max-w-md h-[600px] overflow-y-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center text-blue-800">Student Registration</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <div class="flex space-x-4">
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-gray-700">First Name</label>
+            <input type="text" name="first_name" required placeholder="First Name"
+                   class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          </div>
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-gray-700">Last Name</label>
+            <input type="text" name="last_name" required placeholder="Last Name"
+                   class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Student ID</label>
+          <input type="text" name="student_id" required placeholder="Enter Student ID"
+                 class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Date of Birth</label>
+          <input type="date" name="dob" required
+                 class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email Address</label>
+          <input type="email" name="email" required placeholder="example@email.com"
+                 class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+          <input type="tel" name="phone" required placeholder="e.g., 01XXXXXXXXX"
+                 class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Address</label>
+          <textarea name="address" rows="2" required placeholder="Enter your address"
+                    class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Class</label>
+          <select name="class" required
+                  class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="">Select Class</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Gender</label>
+          <div class="flex space-x-4 mt-1">
+            <label class="inline-flex items-center">
+              <input type="radio" name="gender" value="Male" required class="text-blue-600" />
+              <span class="ml-2">Male</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="gender" value="Female" required class="text-blue-600" />
+              <span class="ml-2">Female</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="gender" value="Other" required class="text-blue-600" />
+              <span class="ml-2">Other</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" name="password" required placeholder="Enter password"
+                 class="w-full mt-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <div class="text-center">
+          <button type="submit"
+                  class="w-full bg-blue-700 text-white py-2 rounded-lg font-semibold hover:bg-blue-800 transition">
+            Register
+          </button>
+        </div>
+        <p class="text-center text-sm mt-2 text-gray-600">
+          Already registered?
+          <a href="/login.html" class="text-blue-700 font-medium hover:underline">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').onclick = function () {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    };
+  </script>
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').onclick = function () {
+      var menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    };
+    // Desktop CLASS ROUTINE dropdown
+    var routineDropdownBtn = document.getElementById('routineDropdownBtn');
+    var routineDropdown = document.getElementById('routineDropdown');
+    if (routineDropdownBtn && routineDropdown) {
+      routineDropdownBtn.onclick = function (e) {
+        e.stopPropagation();
+        routineDropdown.classList.toggle('hidden');
+      };
+      document.addEventListener('click', function (e) {
+        if (!routineDropdown.contains(e.target) && e.target !== routineDropdownBtn) {
+          routineDropdown.classList.add('hidden');
+        }
+      });
+    }
+    // Mobile CLASS ROUTINE modal
+    var mobileRoutineBtn = document.getElementById('mobileRoutineBtn');
+    var mobileRoutineModal = document.getElementById('mobileRoutineModal');
+    var closeMobileRoutine = document.getElementById('closeMobileRoutine');
+    if (mobileRoutineBtn && mobileRoutineModal && closeMobileRoutine) {
+      mobileRoutineBtn.onclick = function () {
+        mobileRoutineModal.classList.remove('hidden');
+      };
+      closeMobileRoutine.onclick = function () {
+        mobileRoutineModal.classList.add('hidden');
+      };
+      mobileRoutineModal.onclick = function (e) {
+        if (e.target === mobileRoutineModal) {
+          mobileRoutineModal.classList.add('hidden');
+        }
+      };
+    }
+  </script>
+   <script src="script.js"></script>
+
+
+
+
+</body>
+</html>
